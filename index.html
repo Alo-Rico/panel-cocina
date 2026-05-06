@@ -1,1 +1,281 @@
-echo "# panel-cocina" >> README.md 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Alo Rico</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#111;
+    color:white;
+    min-height:100vh;
+    overflow-x:hidden;
+}
+
+/* FONDO */
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:
+    linear-gradient(rgba(0,0,0,.70),rgba(0,0,0,.80)),
+    url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1600&auto=format&fit=crop');
+    background-size:cover;
+    background-position:center;
+    z-index:-1;
+}
+
+/* HEADER */
+
+.header{
+    text-align:center;
+    padding:45px 20px 30px;
+}
+
+.logo{
+    width:130px;
+    height:130px;
+    border-radius:50%;
+    object-fit:cover;
+    border:4px solid #ffcc00;
+    box-shadow:0 0 30px rgba(255,204,0,.4);
+    margin-bottom:20px;
+    background:white;
+}
+
+h1{
+    font-size:42px;
+    font-weight:700;
+    color:#ffcc00;
+    margin-bottom:10px;
+}
+
+.sub{
+    font-size:17px;
+    opacity:.9;
+}
+
+/* MENU */
+
+.container{
+    width:100%;
+    max-width:1100px;
+    margin:auto;
+    padding:20px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+/* CARD */
+
+.card{
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.12);
+    backdrop-filter:blur(8px);
+    border-radius:26px;
+    overflow:hidden;
+    transition:.25s;
+    text-decoration:none;
+    color:white;
+    box-shadow:0 10px 30px rgba(0,0,0,.25);
+}
+
+.card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 14px 35px rgba(0,0,0,.35);
+}
+
+.card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.content{
+    padding:22px;
+}
+
+.content h2{
+    font-size:28px;
+    margin-bottom:10px;
+}
+
+.content p{
+    opacity:.85;
+    font-size:15px;
+    line-height:1.5;
+    margin-bottom:22px;
+}
+
+/* BUTTON */
+
+.btn{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:16px;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.2s;
+    color:white;
+}
+
+/* COLORES */
+
+.pizza{
+    background:#ff3d3d;
+}
+
+.hamb{
+    background:#ff9800;
+}
+
+.lomito{
+    background:#00b894;
+}
+
+.btn:hover{
+    filter:brightness(1.08);
+}
+
+/* FOOTER */
+
+.footer{
+    text-align:center;
+    padding:40px 20px 30px;
+    opacity:.7;
+    font-size:14px;
+}
+
+@media(max-width:600px){
+
+    h1{
+        font-size:34px;
+    }
+
+    .logo{
+        width:110px;
+        height:110px;
+    }
+
+    .card img{
+        height:200px;
+    }
+
+}
+
+</style>
+</head>
+<body>
+
+<div class="header">
+
+    <!-- CAMBIA EL LOGO -->
+    <img src="logo.png" class="logo">
+
+    <h1>Alo Rico</h1>
+
+    <div class="sub">
+        Elegí tu menú favorito 🍔🍕🥪
+    </div>
+
+</div>
+
+<div class="container">
+
+    <div class="grid">
+
+        <!-- PIZZA -->
+
+        <a class="card" href="https://1967-rob.github.io/precios-alo-rico/" target="_blank">
+
+            <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=1200&auto=format&fit=crop">
+
+            <div class="content">
+
+                <h2>🍕 Pizzas</h2>
+
+                <p>
+                    Pizzas clásicas, especiales y promociones.
+                </p>
+
+                <button class="btn pizza">
+                    Ver menú
+                </button>
+
+            </div>
+
+        </a>
+
+        <!-- HAMBURGUESAS -->
+
+        <a class="card" href="https://alo-rico.github.io/precios-alorico-hamb-lomito/" target="_blank">
+
+            <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=1200&auto=format&fit=crop">
+
+            <div class="content">
+
+                <h2>🍔 Hamburguesas</h2>
+
+                <p>
+                    Hamburguesas artesanales, combos y extras.
+                </p>
+
+                <button class="btn hamb">
+                    Ver menú
+                </button>
+
+            </div>
+
+        </a>
+
+        <!-- LOMITOS -->
+
+        <a class="card" href="https://alo-rico.github.io/lomitos/" target="_blank">
+
+            <img src="https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?q=80&w=1200&auto=format&fit=crop">
+
+            <div class="content">
+
+                <h2>🥪 Lomitos</h2>
+
+                <p>
+                    Lomitos completos, especiales y promociones.
+                </p>
+
+                <button class="btn lomito">
+                    Ver menú
+                </button>
+
+            </div>
+
+        </a>
+
+    </div>
+
+</div>
+
+<div class="footer">
+    © 2026 Alo Rico
+</div>
+
+</body>
+</html>
