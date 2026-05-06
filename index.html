@@ -152,6 +152,10 @@ h1{
     background:#00b894;
 }
 
+.bebida{
+    background:#2196f3;
+}
+
 .btn:hover{
     filter:brightness(1.08);
 }
@@ -184,11 +188,11 @@ h1{
 
 </style>
 </head>
+
 <body>
 
 <div class="header">
 
-    <!-- CAMBIA EL LOGO -->
     <img src="logo.png" class="logo">
 
     <h1>Alo Rico</h1>
@@ -205,7 +209,7 @@ h1{
 
         <!-- PIZZA -->
 
-        <a class="card" href="https://alo-rico.github.io/pizza/?mesa=${mesa}" target="_blank">
+        <a class="card" id="linkPizza" target="_blank">
 
             <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=1200&auto=format&fit=crop">
 
@@ -227,7 +231,7 @@ h1{
 
         <!-- HAMBURGUESAS -->
 
-        <a class="card" href="https://alo-rico.github.io/hamburguesa/?mesa=${mesa}">
+        <a class="card" id="linkHamburguesa" target="_blank">
 
             <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=1200&auto=format&fit=crop">
 
@@ -249,7 +253,7 @@ h1{
 
         <!-- LOMITOS -->
 
-        <a class="card" href="https://alo-rico.github.io/lomitos/?mesa=${mesa}" target="_blank">  
+        <a class="card" id="linkLomitos" target="_blank">
 
             <img src="https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?q=80&w=1200&auto=format&fit=crop">
 
@@ -269,6 +273,28 @@ h1{
 
         </a>
 
+        <!-- BEBIDAS -->
+
+        <a class="card" id="linkBebidas" target="_blank">
+
+            <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?q=80&w=1200&auto=format&fit=crop">
+
+            <div class="content">
+
+                <h2>🥤 Bebidas</h2>
+
+                <p>
+                    Gaseosas, jugos y bebidas frías.
+                </p>
+
+                <button class="btn bebida">
+                    Ver menú
+                </button>
+
+            </div>
+
+        </a>
+
     </div>
 
 </div>
@@ -276,6 +302,26 @@ h1{
 <div class="footer">
     © 2026 Alo Rico
 </div>
+
+<script>
+
+const params = new URLSearchParams(window.location.search);
+
+const mesa = params.get("mesa") || "general";
+
+document.getElementById("linkPizza").href =
+`https://alo-rico.github.io/pizza/?mesa=${mesa}`;
+
+document.getElementById("linkHamburguesa").href =
+`https://alo-rico.github.io/hamburguesa/?mesa=${mesa}`;
+
+document.getElementById("linkLomitos").href =
+`https://alo-rico.github.io/lomitos/?mesa=${mesa}`;
+
+document.getElementById("linkBebidas").href =
+`https://alo-rico.github.io/bebidas/?mesa=${mesa}`;
+
+</script>
 
 </body>
 </html>
